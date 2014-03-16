@@ -24,23 +24,12 @@ capaces crear migraciones que nos permitan modificar la estructura de 
 aprenderemos como realizar queries usando Active Record y veremos como crear relaciones
 entre nuestros modelos.
 
-Para ello retomaremos la aplicación de tienda Online que creamos en la primera semana y la
-ampliaremos para recoger la siguiente funcionalidad:   
+Para ello retomaremos la aplicación de tienda Online que creamos en la primera semana y la ampliaremos para recoger la siguiente funcionalidad:   
 
-* Nuestro cliente quiere que se puedan hacer compras sobre los productos que ha introducido en
-la base de datos usando el scaffold que desarrollamos la primera semana.
-* La estructura que vamos a crear en la base de datos deberá tener por un lado una tabla pedido
-(Order) para la cuál realizaremos un nuevo scaffold. Este modelo almacenará el estado del
-pedido, medio de pago, dirección de envío, ciudad de envío, y nombre y apellidos del comprador.
-* Por otro lado, para introducir cada uno de los productos que van en un pedido crearemos un
-modelo relación que recogerá cada línea de pedido (LineItem) que contendrá el producto que se
-ha comprado, la cantidad y precio por el que se ha comprado. Para crear este modelo NO lo
-haremos usando un scaffold para ello tendremos que usar el generador de modelos ya que no
-necesitamos ni el controlador ni las vistas que crearía el scaffold.
+* Nuestro cliente quiere que se puedan hacer compras sobre los productos que ha introducido en la base de datos usando el scaffold que desarrollamos la primera semana.
+* La estructura que vamos a crear en la base de datos deberá tener por un lado una tabla pedido (Order) para la cuál realizaremos un nuevo scaffold. Este modelo almacenará el estado del pedido, medio de pago, dirección de envío, ciudad de envío, y nombre y apellidos del comprador.
+* Por otro lado, para introducir cada uno de los productos que van en un pedido crearemos un modelo relación que recogerá cada línea de pedido (LineItem) que contendrá el producto que se ha comprado, la cantidad y precio por el que se ha comprado. Para crear este modelo NO lo haremos usando un scaffold para ello tendremos que usar el generador de modelos ya que no necesitamos ni el controlador ni las vistas que crearía el scaffold.
 * Finalmente habrá que conectar estos dos modelos entre si y con productos.
-Para realización de este ejercicio no será necesario modificar ni las vistas, ni el controlador de
-Order para que acepte LineItems. Esa tarea la realizaremos la semana que viene cuando
-veamos las vistas y los helpers de los formularios.
-* Por otro lado, a nuestro cliente se le olvido decirnos que cada producto tiene una categoría,
-necesaria para clasificar los productos, que se corresponderá con un varchar en base de datos.
+Para realización de este ejercicio no será necesario modificar ni las vistas, ni el controlador de Order para que acepte LineItems. Esa tarea la realizaremos la semana que viene cuandoveamos las vistas y los helpers de los formularios.
+* Por otro lado, a nuestro cliente se le olvido decirnos que cada producto tiene una categoría, necesaria para clasificar los productos, que se corresponderá con un varchar en base de datos.
 Para esta tarea habrá que modificar la tabla Products usando para ello una migración.
