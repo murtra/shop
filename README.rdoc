@@ -32,4 +32,30 @@ Para ello retomaremos la aplicación de tienda Online que creamos en 
 * Finalmente habrá que conectar estos dos modelos entre si y con productos.
 Para realización de este ejercicio no será necesario modificar ni las vistas, ni el controlador de Order para que acepte LineItems. Esa tarea la realizaremos la semana que viene cuandoveamos las vistas y los helpers de los formularios.
 * Por otro lado, a nuestro cliente se le olvido decirnos que cada producto tiene una categoría, necesaria para clasificar los productos, que se corresponderá con un varchar en base de datos.
-Para esta tarea habrá que modificar la tabla Products usando para ello una migración.
+Para esta tarea habrá que modificar la tabla Products usando para ello una migración. 
+
+https://github.com/murtra/shop/tree/beaaf4d7eb90579e10d60b3950d4bd122f2475e2
+             
+==  Semana 4: Action View & Assets Pipeline 
+
+El cuarto ejercicio del curso de Rails está centrado en las vistas, aunque para completarlo 
+necesitaremos tocar un poco los modelos y ligeramente un controlador. También será el 
+primero que necesitaremos programar un poco.
+Para realizar el ejercicio continuaremos trabajando sobre el código de nuestra tienda Online. En 
+esta ocasión nuestro cliente desea que sea posible seleccionar los productos que vamos a 
+comprar directamente desde el formulario del pedido (Order).
+En concreto, debemos mostrar bajo los campos del pedido, una entrada para cada LineItem, 
+con su correspondiente cantidad, y un campo para seleccionar el producto que sea desea 
+comprar.
+Una vez se guarde este formulario, deberemos crear en base de datos un Order y un LineItem 
+por cada uno de los productos que se hayan comprado.
+Por otro lado, aunque en primera instancia el formulario deberá mostrar sólo una entrada de 
+LineItem, deberemos tener disponible un enlace que nos permita añadir más elementos 
+dinámicamente. Para ello deberemos programar esta funcionalidad usando un poco de 
+javascript.
+También deberemos permitir el borrado de LineItems, tanto aquellos que han sido guardados en 
+base de datos como los que todavía no lo han sido.
+Una vez guardado el Pedido, deberá mostrarse en la pantalla de detalle los datos básicos del 
+pedido, los productos comprados, junto a su cantidad y su precio correctamente formateado.
+Para finalizar, se valorará positivamente que añadir un poco de colorido a la aplicación usando 
+para ello scss.
