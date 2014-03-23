@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :load_products, only: [:new, :edit]
 
   # GET /orders
   # GET /orders.json
@@ -14,11 +15,12 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    @order = Order.new  
+    @order.line_items.build
   end
 
   # GET /orders/1/edit
-  def edit
+  def edit 
   end
 
   # POST /orders
@@ -69,6 +71,10 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:status, :payment_mode, :address, :city, :name, :last_name)
-    end
+      params.require(:order).permit(:status, :payment_mode, :address, :city, :name, :last_name, line_items_attributes: [:id, :quantity, :price, :product_id, :_destroy])
+    end 
+    
+    def load_products
+      @products = Product.all
+    end   
 end
