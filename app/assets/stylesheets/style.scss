@@ -1,0 +1,147 @@
+/*
+  Variables
+--------------------------------------------- */
+$body-color               :   #424244;
+$fontSize                 :   1.4em;
+$lineHeight               :   1.5em;
+$baseFontFamily           :   "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: $body-color;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+img {
+  vertical-align: middle;
+}
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* GENERAL STYLES
+-----------------------------------------------------------------------------
+*/   
+html, body {
+  height: 100%;
+  text-rendering: 'optimizeLegibility';
+}
+body {
+  font-family: $baseFontFamily;
+  background: #fff;
+} 
+img {
+	max-width: 100%;
+}
+p {
+  text-align: justify;
+}
+a {
+  text-decoration: none;
+  color: #6cc;
+}
+::selection {
+  background: #DD0202;
+  color: #FFF;
+}  
+h1 {
+	color: #5C96A7;
+}
+
+/* tables */
+table { 
+	border-radius: 4px;   
+	background-color: #CDCDCD;
+	margin:10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left; 
+	thead tr th, table.tablesorter tfoot tr th {
+		background-color: #e6EEEE;
+		font-size: 8pt;
+		padding: 4px;
+	}              
+	thead tr .header {
+		background-image: url(/img/ts/bg.gif);
+		background-repeat: no-repeat;
+		background-position: center right;
+		cursor: pointer;
+	}
+	tbody td {
+		color: #3D3D3D;
+		padding: 4px;
+		background-color: #FFF;
+		vertical-align: top;
+	} 
+	td {
+		background-color:#F0F0F6;     
+	}
+} 
+
+/* forms */
+fieldset {
+	border: 0; 
+	margin: 3em 2em 1em; 
+	+fieldset {	 
+		margin-top: 0; 
+	}	
+} 
+label {
+	color: #1E5C99;
+}
+input, select, textarea, button {
+  background-color: #ffffff;
+  font-size:  $fontSize*0.9;
+  line-height:  $lineHeight*0.9;
+  padding: 0 0.2em;
+  margin: 0.2em 0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}       
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;	
+	padding: 0.6em 1.2em;
+	font-size: 1.2em;
+	line-height: 1.3em; 
+	border-radius: 4px;                       
+} 
+.btn-small {
+	font-size: 1em; 
+}
+.btn-info {
+	color: #fff !important;
+	background-color: #3498db;
+}
+.line-items {
+	border: 1px #ccc dotted;
+	border-radius: 4px; 
+	text-align: center;
+	width: 50%;
+	padding: 1em;  
+	margin: 2em 0; 
+	input[type="number"]  { 
+		width: 3em;
+	} 
+}

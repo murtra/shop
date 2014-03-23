@@ -36,13 +36,17 @@
     <%= f.text_field :last_name %>
   </div>    
   
-  <%= f.fields_for :line_items do |builder| %>
-    <%= render "line_item_fields", f: builder %>
-  <% end %> 
+  <div class="line-items">
+    <h2>Products</h2>
+    
+    <%= f.fields_for :line_items do |builder| %>
+      <%= render "line_item_fields", f: builder %>
+    <% end %> 
   
-  <%= link_to_add_fields "Add LineItem", f, :line_items %> 
+    <%= link_to_add_fields "Add LineItem", f, :line_items %> 
+  </div>
    
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, class: "btn btn-info" %>
   </div>
 <% end %>

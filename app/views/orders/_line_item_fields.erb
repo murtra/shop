@@ -1,5 +1,5 @@
 <fieldset>
-  <%= f.label :quantity, "Quantity" %> <%= f.text_field :quantity %>
+  <%= f.label :quantity, "Quantity" %> <%= f.number_field :quantity %>
   <%= f.label :product_id, "Product" %> <%= f.collection_select(:product_id, @products, :id, :name, {:include_blank => 'Please Select'}) %>
 
   <%= f.hidden_field :id %> 
@@ -7,6 +7,6 @@
   <%= f.check_box :_destroy %> <%= f.label :_destroy, "remove" %>
 <% else %> 
   <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class: "remove_fields" %>
+  <%= link_to "Remove", '#', class: "remove_fields  btn btn-info btn-small" %>
 <% end %>    
 </fieldset>
