@@ -28,7 +28,11 @@
 <p>
   <strong>Last name:</strong>
   <%= @order.last_name %>
-</p>
+</p>   
+
+<ul>
+  <%= render @order.line_items %>
+</ul>  
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
