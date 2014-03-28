@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 /*
   Variables
 --------------------------------------------- */
@@ -45,7 +47,8 @@ html, body {
 }
 body {
   font-family: $baseFontFamily;
-  background: #fff;
+  background: #fff; 
+  padding-top: 3em;
 } 
 img {
 	max-width: 100%;
@@ -63,7 +66,13 @@ a {
 }  
 h1 {
 	color: #5C96A7;
-}
+}  
+
+/* layout */
+footer {
+	margin: 2em 0;
+	display: none;
+} 
 
 /* tables */
 table { 
@@ -73,16 +82,17 @@ table {
 	font-size: 8pt;
 	width: 100%;
 	text-align: left; 
-	thead tr th, table.tablesorter tfoot tr th {
+	thead tr th {
 		background-color: #e6EEEE;
 		font-size: 8pt;
 		padding: 4px;
 	}              
 	thead tr .header {
-		background-image: url(/img/ts/bg.gif);
 		background-repeat: no-repeat;
 		background-position: center right;
-		cursor: pointer;
+	}  	
+	tbody tr {
+		border-bottom: 1px #eee solid;
 	}
 	tbody td {
 		color: #3D3D3D;
@@ -104,36 +114,21 @@ fieldset {
 	}	
 } 
 label {
-	color: #1E5C99;
+	
 }
 input, select, textarea, button {
   background-color: #ffffff;
   font-size:  $fontSize*0.9;
   line-height:  $lineHeight*0.9;
   padding: 0 0.2em;
-  margin: 0.2em 0;
   border: 1px solid #cccccc;
   border-radius: 4px;
-}       
-.btn {
-	display: inline-block;
-	margin-bottom: 0;
-	font-weight: normal;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;	
-	padding: 0.6em 1.2em;
-	font-size: 1.2em;
-	line-height: 1.3em; 
-	border-radius: 4px;                       
-} 
+}  
 .btn-small {
-	font-size: 1em; 
+	font-size: 0.9em; 
 }
-.btn-info {
-	color: #fff !important;
-	background-color: #3498db;
-}
+
+/* elements */
 .line-items {
 	border: 1px #ccc dotted;
 	border-radius: 4px; 
