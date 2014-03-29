@@ -1,30 +1,30 @@
-= Curso de Rails de ASPgems 
+= Curso de Rails de ASPgems
 
-== Semana 1 
+== Semana 1
 
 La primera habilidad a adquirir para este curso es ser capaces de generar un CRUD utilizando
-los scaffolds de Rails.      
+los scaffolds de Rails.
 
 Para ello lo que haremos será comenzar a desarrollar una pequeña tienda online. Esta semana
 sólo es necesario realizar la gestión de productos, es decir, su alta, edición, eliminación y, por
-supuesto, una pantalla para visualizar cada registro. 
+supuesto, una pantalla para visualizar cada registro.
 
-Los productos tendrán los siguientes campos:   
+Los productos tendrán los siguientes campos:
 
 * Nombre: tipo texto, no más de 255 caracteres
 * Descripción: Texto largo
 * Fecha de alta en el almacén: tipo fecha ­ hora
 * Fabricante: Tipo texto
-* Cantidad en el almacen: Numérico 
+* Cantidad en el almacen: Numérico
 
-== Semana 3: Active Record   
+== Semana 3: Active Record
 
 Durante esta tercera semana del curso vamos a desarrollar nuestras habilidades para ser
 capaces crear migraciones que nos permitan modificar la estructura de nuestra base de datos,
 aprenderemos como realizar queries usando Active Record y veremos como crear relaciones
 entre nuestros modelos.
 
-Para ello retomaremos la aplicación de tienda Online que creamos en la primera semana y la ampliaremos para recoger la siguiente funcionalidad:   
+Para ello retomaremos la aplicación de tienda Online que creamos en la primera semana y la ampliaremos para recoger la siguiente funcionalidad:
 
 * Nuestro cliente quiere que se puedan hacer compras sobre los productos que ha introducido en la base de datos usando el scaffold que desarrollamos la primera semana.
 * La estructura que vamos a crear en la base de datos deberá tener por un lado una tabla pedido (Order) para la cuál realizaremos un nuevo scaffold. Este modelo almacenará el estado del pedido, medio de pago, dirección de envío, ciudad de envío, y nombre y apellidos del comprador.
@@ -32,11 +32,11 @@ Para ello retomaremos la aplicación de tienda Online que creamos en 
 * Finalmente habrá que conectar estos dos modelos entre si y con productos.
 Para realización de este ejercicio no será necesario modificar ni las vistas, ni el controlador de Order para que acepte LineItems. Esa tarea la realizaremos la semana que viene cuandoveamos las vistas y los helpers de los formularios.
 * Por otro lado, a nuestro cliente se le olvido decirnos que cada producto tiene una categoría, necesaria para clasificar los productos, que se corresponderá con un varchar en base de datos.
-Para esta tarea habrá que modificar la tabla Products usando para ello una migración. 
+Para esta tarea habrá que modificar la tabla Products usando para ello una migración.
 
 https://github.com/murtra/shop/tree/beaaf4d7eb90579e10d60b3950d4bd122f2475e2
-             
-==  Semana 4: Action View & Assets Pipeline 
+
+==  Semana 4: Action View & Assets Pipeline
 
 El cuarto ejercicio del curso de Rails está centrado en las vistas, aunque para completarlo 
 necesitaremos tocar un poco los modelos y ligeramente un controlador. También será el 
@@ -59,3 +59,28 @@ Una vez guardado el Pedido, deberá mostrarse en la pantalla de detal
 pedido, los productos comprados, junto a su cantidad y su precio correctamente formateado.
 Para finalizar, se valorará positivamente que añadir un poco de colorido a la aplicación usando 
 para ello scss.
+
+https://github.com/murtra/shop/tree/7e794ee8280ce381cee950bcde4418fe2b81c539
+
+== Semana 5: Action Controller
+
+Durante esta semana aprenderemos el funcionamiento de los controladores en Rails. Para ello 
+necesitaremos aprender a recibir los parámetros de una request, usar filtros y gestionar la 
+sesión y las cookies.
+Continuando con nuestra pequeña tienda online, nuestro cliente necesita que añadamos la 
+posibilidad de que los compradores puedan registrarse en la web, y por supuesto iniciar una 
+sesión antes de hacer un pedido.
+Para la realización de esta funcionalidad necesitaremos guardar los datos del alta de los 
+usuarios: Nombre, apellidos, email, por supuesto, una contraseña (para esto nos valdría un 
+scaffold). Para gestionar la contraseña del usuario deberéis usar el método 
+has_secure_password de Active Record descrito en el vídeo sobre autorización en la unidad.
+Por otro lado necesitaremos crear un formulario para que el usuario pueda iniciar sesión, para 
+ello deberemos crear un controlador SessionsController, que será el encargado de autentificar 
+al usuario, y las vistas correspondientes.
+Por último deberemos habilitar unos enlaces en la cabecera para que el usuario pueda ir al 
+formulario de inicio de sesión y cerrar la sesión una vez realizada la compra. También sería 
+interesante, que tanto la gestión de productos como la creación de nuevos pedidos sólo fuera 
+accesible estando logado en el sistema.
+
+https://github.com/murtra/shop/tree/554edc1b95d57f4f6f604a8fb784cdd9ce3913a6
+
