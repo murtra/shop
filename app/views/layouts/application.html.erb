@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shop</title>
+  <title>ShopInstant</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= controller.controller_name %>" class="<%= controller.action_name %>">
   <div class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -18,14 +18,32 @@
         </button>
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
-
+        
+        <% if current_user %> 
         <ul class="nav navbar-nav">
-          <li><%= link_to "Products", products_path %></li>
-          <li><%= link_to "Orders", orders_path %></li>
-        </ul>
+          <li>
+            <%= link_to "Products", products_path %>
+          </li>
+          <li>
+            <%= link_to "Orders", orders_path %>
+          </li>
+        </ul> 
+        <% end %>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/">Login</a></li>
+          <% if current_user %> 
+            <li>
+              <%= link_to "Connected as #{current_user.email}", "/" %>
+            </li>
+            <li>
+              <%= link_to session_path(current_user), :method => :delete do %>
+                <i class="glyphicon glyphicon-off"></i> Close 
+              <% end %>  
+            </li>  
+          <% else%>
+            <li><%= link_to "Login", new_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_path %></li> 
+          <% end %> 
         </ul>
 
       </div>
@@ -35,7 +53,10 @@
   <div class="container">
     <div class="page-header" id="banner">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12">          
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>  
           <%= yield %>
         </div>
       </div>
@@ -46,7 +67,7 @@
         <div class="col-lg-12">
           <ul class="list-unstyled">
             <li class="pull-right"><a href="#top">Back to top</a></li>
-            <li>Code: <%= link_to "https://github.com/murtra/shop"%></li> 
+            <li><%= link_to "<span class='glyphicon glyphicon-share'></span> https://github.com/murtra/shop".html_safe, "https://github.com/murtra/shop"%></li> 
           </ul>
         </div>
       </div>

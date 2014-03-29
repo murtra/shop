@@ -65,13 +65,15 @@ a {
   color: #FFF;
 }  
 h1 {
-	color: #5C96A7;
+	color: #2A8DA9;
 }  
 
 /* layout */
 footer {
 	margin: 2em 0;
-	display: none;
+	a {
+		color: #498B93;
+	}
 } 
 
 /* tables */
@@ -124,8 +126,132 @@ input, select, textarea, button {
   border: 1px solid #cccccc;
   border-radius: 4px;
 }  
+input[type="submit"] {
+	color: white;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	border-radius: 4px;  
+} 
+.btn {
+	color: white !important;
+}
 .btn-small {
 	font-size: 0.9em; 
+}  
+
+/*
+.well {
+	fieldset {
+		margin-top: 1em;
+	}
+  label {
+	  display: block;
+  }	
+}
+*/
+
+.well {
+	fieldset {
+		margin-top: 1em;
+	}
+  label {
+	  display: block;
+  }	
+}
+
+/* errors */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+/* alerts */
+.alert {
+  padding: 15px;
+  margin-bottom: 21px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.alert .alert-link {
+  font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}         
+
+.alert, .alert-notice {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #ffffff;
+}
+.alert, .alert-notice hr {
+  border-top-color: #258cd1;
+}
+.alert, .alert-notice .alert-link {
+  color: #e6e6e6;
+}  
+
+.alert-success {
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+  color: #ffffff;
+}
+.alert-success hr {
+  border-top-color: #15a589;
+}
+.alert-success .alert-link {
+  color: #e6e6e6;
+}
+
+.alert-warning {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: #ffffff;
+}
+.alert-warning hr {
+  border-top-color: #e08e0b;
+}
+.alert-warning .alert-link {
+  color: #e6e6e6;
+}
+.alert-alert {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #ffffff;
+}
+.alert-alert hr {
+  border-top-color: #e43725;
+}
+.alert-alert .alert-link {
+  color: #e6e6e6;
 }
 
 /* elements */
@@ -140,3 +266,8 @@ input, select, textarea, button {
 		width: 3em;
 	} 
 }
+
+/* util */ 
+.center {
+	text-align: center;
+}        
