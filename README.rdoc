@@ -84,3 +84,49 @@ accesible estando logado en el sistema.
 
 https://github.com/murtra/shop/tree/554edc1b95d57f4f6f604a8fb784cdd9ce3913a6
 
+== Semana 6: Active Record: Callbacks, validations y scopes  
+
+Esta semana vamos a profundizar un poco más con el tema de Active Record. En esta ocasión 
+vamos a ver como se usan las validaciones, qué son y cómo se usan los callbacks y cómo 
+podemos refactorizar nuestras queries mediante el uso de scopes.
+Para ello, vamos a añadir validaciones a todos los modelos. Sé que alguno ya lo ha hecho, pero 
+el que todavía no lo haya hecho este es el momento. Las validaciones a añadir serían las 
+siguientes:
+Usuario:
+● Campos obligatorios: nombre, email y por supuesto el password.
+● Validación de que el email tiene un formato correcto.
+● Validación de que el password tiene al menos 8 caracteres, al menos uno numérico, al 
+menos un carácter.
+Productos:
+● Campos obligatorios: Nombre, fecha de registro, cantidad en el almacén, precio.
+● Campos numéricos: Cantidad y precio.
+● La categoría debe ser: libros, música & peliculas, electrónica, hogar, juguetes, ropa, 
+comestibles, o estar vacía.
+● Campo único: nombre del producto.
+Pedidos:
+● Campos obligatorios: Nombre del comprador y apellidos, dirección, ciudad, método de 
+pago, estado.
+● El método de pago debe ser: en efectivo, tarjeta o paypal.
+● El estado debe ser: Pendiente, Enviado, Recibido.
+Lineas de Pedido:
+● Campos obligatorios: product_id, cantidad, y precio.
+● Campos numérico: cantidad y precio.
+Por otro lado necesitamos automatizar algunos procesos dentro de la aplicación que deberán 
+ser implementados usando callbacks:
+1. El campo precio de la línea de pedido no debe aparecer en el formulario, y deberá ser 
+rellenado automáticamente al guardar el pedido con el precio del producto en ese 
+momento.2. Al mismo tiempo, se deberá descontar la cantidad del producto que ha sido comprado 
+de la tabla de productos, para mantener actualizado el número de productos en el
+almacén.
+3. En el formulario del Pedido, no deberá aparecer el campo estado, y deberá ser rellenado 
+a ‘Pendiente’ en el momento de la creación, para la posterior revisión de un encargado.
+4. En el formulario de edición de pedido se deberá poder cambiar el estado del pedido.
+Por último, en la página del listado de pedido habrá que añadir una serie de filtros:
+1. Por categoría
+2. Cantidad de producto en el almacén.
+3. Fecha de registro.
+4. Fabricante.
+5. Rango de precio.
+Las queries necesarias para realizar estos filtros deberán ser implementadas en el modelo 
+Product como scopes y usadas desde el controlador ProductsController.
+
