@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController  
   before_action :authenticate_user!  
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :load_products, only: [:new, :edit]
+  before_action :load_products, only: [:new, :edit, :create, :update]
 
   # GET /orders
   # GET /orders.json

@@ -88,7 +88,8 @@ https://github.com/murtra/shop/tree/554edc1b95d57f4f6f604a8fb784cdd9ce3913a6
 
 Esta semana vamos a profundizar un poco más con el tema de Active Record. En esta ocasión 
 vamos a ver como se usan las validaciones, qué son y cómo se usan los callbacks y cómo 
-podemos refactorizar nuestras queries mediante el uso de scopes.
+podemos refactorizar nuestras queries mediante el uso de scopes. 
+
 Para ello, vamos a añadir validaciones a todos los modelos. Sé que alguno ya lo ha hecho, pero 
 el que todavía no lo haya hecho este es el momento. Las validaciones a añadir serían las 
 siguientes:
@@ -128,5 +129,16 @@ Por último, en la página del listado de pedido habrá que añadir 
 4. Fabricante.
 5. Rango de precio.
 Las queries necesarias para realizar estos filtros deberán ser implementadas en el modelo 
-Product como scopes y usadas desde el controlador ProductsController.
+Product como scopes y usadas desde el controlador ProductsController.     
+
+DUDAS
+
+- diferencia métodos custom validacion 
+http://www.rails-dev.com/custom-validators-in-ruby-on-rails-4
+- validates :password, presence: true, length: { minimum: 8 }, on: :create     
+Password can't be blank
+Password can't be blank    
+
+
+
 

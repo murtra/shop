@@ -1,4 +1,15 @@
-class Order < ActiveRecord::Base 
+class Order < ActiveRecord::Base   
+  ALLOWED_PAYMENT_MODES = ["cash", "card", "paypal"]
+  ALLOWED_STATUS = ["pending", "send", "received"]
+  
+  validates :name, :last_name, :address, :city, :payment_mode, :status, presence: true
+  validates :payment_mode, inclusion: { in: Order::ALLOWED_PAYMENT_MODES,
+      message: "is not valid" }
+  validates :status, inclusion: { in: Order::ALLOWED_STATUS,
+    message: "is not valid" } 
+    
+  validates_associated :line_items
+  
   has_many :line_items
   has_many :products, through: :line_items 
   
