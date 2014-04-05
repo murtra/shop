@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
+  <% unless @order.new_record? %>  
+    <div class="field">
+      <%= f.label :status %><br>
+      <%= f.text_field :status %>
+    </div>  
+  <% end %>
+
   <div class="field">
     <%= f.label :payment_mode %><br>
     <%= f.text_field :payment_mode %>

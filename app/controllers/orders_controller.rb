@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController  
   before_action :authenticate_user!  
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :load_products, only: [:new, :edit, :create, :update]
+  before_action :load_products, only: [:new, :edit, :create, :update] 
 
   # GET /orders
   # GET /orders.json
@@ -75,7 +75,9 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:status, :payment_mode, :address, :city, :name, :last_name, line_items_attributes: [:id, :quantity, :price, :product_id, :_destroy])
     end 
     
+    # Load products list
     def load_products
       @products = Product.all
-    end   
+    end 
+    
 end
