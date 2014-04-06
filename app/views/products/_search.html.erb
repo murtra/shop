@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-lg-12 well filter">
+      <form action="<%= products_path %>" method="get" >
+        <fieldset>
+          <div class="form-group">
+            <%= label_tag(:category) %>
+            <input type="text" name="category" value="<%= params[:category] %>">  
+          </div>
+          <div class="form-group">
+            <%= label_tag(:stock) %> 
+            <input type="number" name="stock" value="<%= params[:stock] %>"> 
+          </div>
+          <div class="form-group">
+            <%= label_tag(:stored_at) %> 
+            <input type="date" name="stored_at" value="<%= params[:stored_at] %>">     
+          </div>
+          <div class="form-group">
+            <%= label_tag(:manufacturer) %> 
+            <input type="text" name="manufacturer" value="<%= params[:manufacturer] %>">  
+          </div>
+          <div class="form-group"> 
+            Price         
+            <%= label_tag(:price_greater, "between") %> 
+            <input type="number" name="price_greater" value="<%= params[:price_greater] %>">
+            <%= label_tag(:price_lower, "and") %> 
+            <input type="number" name="price_lower" value="<%= params[:price_lower] %>">
+          </div>
+          <button type="submit" class="btn btn-primary">Filter</button>
+      </form>
+  </div>
+</div>

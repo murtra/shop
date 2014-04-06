@@ -12,6 +12,13 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
+  scope :with_category,     ->(category) { where("category = ?", category) }
+  scope :with_stock,        ->(stock) { where("stock = ?", stock) }
+  scope :stored_at,         ->(time) { where("stored_at = ?", time) }
+  scope :with_manufacturer, ->(manufacturer) { where("manufacturer = ?", manufacturer) }
+  scope :price_lower,       ->(price) { where("price <= ?", price) }
+  scope :price_greater,     ->(price) { where("price >= ?", price) }
+
   def decrement_stock(num)
     self.stock -= num
     save

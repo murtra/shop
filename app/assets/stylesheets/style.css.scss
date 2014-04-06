@@ -150,8 +150,6 @@ input[type="submit"] {
 .btn-small {
 	font-size: 0.9em; 
 }  
-
-/*
 .well {
 	fieldset {
 		margin-top: 1em;
@@ -160,16 +158,15 @@ input[type="submit"] {
 	  display: block;
   }	
 }
-*/
-
-.well {
-	fieldset {
-		margin-top: 1em;
-	}
+.well.filter {
   label {
-	  display: block;
-  }	
-}
+	  display: inline;
+  }	 
+ .form-group 	{
+	  display: inline-block; 
+	  padding-right: 1em;
+  }
+} 
 
 /* errors */
 #error_explanation {
