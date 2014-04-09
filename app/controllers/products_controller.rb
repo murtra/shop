@@ -5,13 +5,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-    @products = @products.with_category(params[:category])          if params[:category].present?
-    @products = @products.with_stock(params[:stock])                if params[:stock].present?
-    @products = @products.stored_at(params[:stored_at])             if params[:stored_at].present?
-    @products = @products.with_manufacturer(params[:manufacturer])  if params[:manufacturer].present?
-    @products = @products.price_lower(params[:price_lower])         if params[:price_lower].present?
-    @products = @products.price_greater(params[:price_greater])     if params[:price_greater].present?
+    @products = Product.filter(params)
   end
 
   # GET /products/1

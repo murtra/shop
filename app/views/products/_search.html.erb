@@ -18,12 +18,11 @@
             <%= label_tag(:manufacturer) %> 
             <input type="text" name="manufacturer" value="<%= params[:manufacturer] %>">  
           </div>
-          <div class="form-group"> 
-            Price         
-            <%= label_tag(:price_greater, "between") %> 
-            <input type="number" name="price_greater" value="<%= params[:price_greater] %>">
-            <%= label_tag(:price_lower, "and") %> 
-            <input type="number" name="price_lower" value="<%= params[:price_lower] %>">
+          <div class="form-group">         
+            <%= label_tag(:minimun_price) %> 
+            <input type="number" name="minimun_price" value="<%= params[:minimun_price] %>">
+            <%= label_tag(:maximum_price) %> 
+            <input type="number" name="maximum_price" value="<%= params[:maximum_price] %>">
           </div>
           <button type="submit" class="btn btn-primary">Filter</button>
       </form>
