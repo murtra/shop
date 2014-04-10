@@ -129,4 +129,38 @@ Por último, en la página del listado de pedido habrá que añadir 
 4. Fabricante.
 5. Rango de precio.
 Las queries necesarias para realizar estos filtros deberán ser implementadas en el modelo 
-Product como scopes y usadas desde el controlador ProductsController.     
+Product como scopes y usadas desde el controlador ProductsController.   
+
+https://github.com/murtra/shop/tree/80762b24f1fe91368be938ed1f1abf3f2fa74212  
+
+== Semana 7: Action Mailer & I18n 
+
+Esta semana vamos a trabajar por un lado los Mailers, y por otro lado, la internacionalización. 
+Action Mailer es el módulo de Rails encargado del envío de emails. Los mailers son muy 
+parecidos a los controllers en su funcionamiento, pero con la diferencia que las vistas que se 
+generan son enviadas por email.     
+
+Todos los mailers heredan de la clase ActionMailer::Base, y al final de cada uno de sus 
+métodos debemos llamar al método mail, que será el encargado de generar el email.
+Para enviar el correo usando un mailer simplemente debemos llamar al método que deseemos 
+seguido del método deliver, por ejemplo, UserMailer.signup(user).deliver.
+I18n es el módulo de Rails encargado de internacionalizar la aplicación. Se encarga tanto de 
+traducir los textos al idioma deseado como de los cambios de formato tanto de fechas como de 
+monedas.            
+
+Consta de dos métodos fundamentales, translate (I18n.t) y localize(I18n.l). Los ficheros de 
+localización se guardan en la carpeta config/locale, seguido del código del idioma y luego el 
+normalmente el nombre del controlador, y el formato en el que se guarda es yml. Por ejemplo, 
+config/locales/es/users.yml          
+
+El idioma de nuestra app puede ser configurado desde el application.yml, pero también 
+cambiado dinámicamente usando, por ejemplo, I18n.locale = :es  
+
+Esta semana nuestro cliente desea que añadamos a nuestra tienda Online la capacidad de 
+enviar un email de resumen a sus compradores una vez hayan completado un pedido. En este 
+email deberemos mostrar los datos que forman un pedido, junto con cada uno de los productos 
+que se han comprado, cantidad, precio de los mismos, y el precio total del pedido.   
+
+Por otro lado, la otra funcionalidad que nuestro cliente nos pide es un par de enlaces en el pie de 
+la página para cambiar de idioma entre español e inglés. Cuando se haga click en uno de esos 
+enlaces, todos los textos de la aplicación deben cambiar al idioma seleccionado.

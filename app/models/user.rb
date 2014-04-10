@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   validates :name, :email, presence: true
 
   validates :email, uniqueness: true
-  #validates :email, format: { with: EMAIL_REGEX, message: "hasn't a valid format" }, unless: "email.blank?"
   validates :email, email: true
 
   validates :password, presence: true, length: { minimum: 8 }, on: :create
