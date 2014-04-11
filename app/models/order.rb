@@ -17,6 +17,10 @@ class Order < ActiveRecord::Base
   
   accepts_nested_attributes_for :line_items, allow_destroy: true,
     reject_if: proc { |attributes| attributes[:product_id].blank? || attributes[:quantity].blank? }  
+  
+  def total_price
+    line_items.sum {|l| l.price * l.quantity}
+  end
     
   private 
   
