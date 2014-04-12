@@ -1,11 +1,18 @@
-Exercise01::Application.routes.draw do
-  get "static_pages/home"
-  resources :orders
-  resources :products        
-  resources :users, only: [:new, :create]   
-  resources :sessions, only: [:new, :create, :destroy]   
+Exercise01::Application.routes.draw do 
   
-  root to: 'static_pages#home'    
+  scope ":locale", locale: /en|es/ do 
+    get "static_pages/home"
+    resources :orders
+    resources :products        
+    resources :users, only: [:new, :create]   
+    resources :sessions, only: [:new, :create, :destroy]   
+  
+    root to: 'static_pages#home'   
+  end 
+  
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  get '/', to: 'static_pages#home'
+  get '', to: redirect("/")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
