@@ -1,9 +1,9 @@
-<h1>Sign Up</h1>
+<h1><%= t('generic.signup') %></h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
-      <h2>Form is invalid</h2>
+      <h2><%= t('generic.errors') %></h2>
       <ul>
         <% for message in @user.errors.full_messages %>
           <li><%= message %></li>
@@ -32,6 +32,6 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %>
     </div>
-    <div class="actions"><%= f.submit %></div>  
+    <div class="actions"><%= f.submit t('generic.submit') %></div>  
   </fieldset></div> 
 <% end %>

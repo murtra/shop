@@ -1,7 +1,9 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2>  <%= t('errors.template.header',
+        :model => Order.model_name.human, :count => @order.errors.count) %>
+      </h2>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -13,7 +15,7 @@
 
   <% unless @order.new_record? %>  
     <div class="field">
-      <%= f.label :status %><br>
+      <%= f.label I18n.t("order.status", :default => "status") %><br>
       <%= f.text_field :status %>
     </div>  
   <% end %>
@@ -40,13 +42,13 @@
   </div>    
   
   <div class="line-items">
-    <h2>Products</h2>
+    <h2><%= Product.model_name.human(count: 2) %></h2>
     
     <%= f.fields_for :line_items do |builder| %>
       <%= render "line_item_fields", f: builder %>
     <% end %> 
   
-    <%= link_to_add_fields "Add LineItem", f, :line_items %> 
+    <%= link_to_add_fields t("generic.add", :default => "Add"), f, :line_items %> 
   </div>
    
   <div class="actions">

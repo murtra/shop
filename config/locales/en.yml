@@ -130,6 +130,7 @@ en:
         one: is the wrong length (should be 1 character)
         other: is the wrong length (should be %{count} characters)
       other_than: "must be other than %{count}"
+      wrong_format: has an invalid format
     template:
       body: ! 'There were problems with the following fields:'
       header:
@@ -209,7 +210,80 @@ en:
   activerecord:
     errors:
       <<: *errors
-  # CUSTOM TRANSLATIONS
+  # CUSTOM TRANSLATIONS     
+  generic:
+    submit: Submit
+    errors: Errors
+    show: Show
+    editing: Editing
+    new: "New %{model}"
+    adding: Add
+    edit: Edit 
+    edit_model: "Edit %{model}"  
+    listing_model: "Listing %{model}"  
+    add: Add
+    destroy: Destroy
+    remove: Delete
+    required_fields: required fields
+    successfully_updated: The data has been successfully changed.
+    successfully_created: The register has been created.
+    are_you_sure: Are you sure
+    is_not_valid: is invalid
+    connected: Connected as
+    close: Close
+    back: "Back"
+    signup: "Register"
+    login: Login
+    logout: Logout
+    logged_out: Logged out
+    logged_in: Logged in
+    invalid: invalid
+    invalid_credentials: Invalid Email or password 
+    select: select
+  order_mailer:
+      order_created:
+        subject: "Your order"
   home:
-    welcome: Welcome to  
-    description: The shop where you can find more things than in Amazon! 
+    welcome: Welcome to
+    description: The shop where you'll find more things than in Amazon!
+  activerecord:
+    models:
+      product:
+        one: Product
+        other: Products
+      order:
+        one: Order
+        other: Orders
+    attributes:
+      user:
+        name: Name
+        surname: Surname
+        password: Password
+        password_confirmation: Password confirmation
+      order:
+        status: Status
+        payment_mode: Payment mode
+        address: Address
+        city: City
+        name: Name
+        last_name: Surname
+      line_item:
+        quantity: Quantity
+        product: Product
+      product:
+        name: Name
+        description: Description
+        category: Category
+        stored_at: Stored at
+        manufacturer: Manufacturer
+        price: Price
+  order:
+   allowed_payment_modes: 
+     - cash 
+     - card 
+     - paypal 
+   allowed_status:
+     - pending
+     - sent
+     - received   
+    

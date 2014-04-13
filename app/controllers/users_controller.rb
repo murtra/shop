@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save    
       login_user(@user)  
-      redirect_to root_url, :notice => "Signed up!"
+      redirect_to root_url, :notice => I18n.t("generic.signed_up") #"Signed up!"
     else
       render "new"
     end

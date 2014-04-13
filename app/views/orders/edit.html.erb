@@ -1,6 +1,6 @@
-<h1>Editing order</h1>
+<h1><%= I18n.t("generic.edit_model", model: Order.model_name.human(count: 1)) %></h1>  
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to I18n.t("generic.show", :default => 'Show'), @order %> |
+<%= link_to I18n.t("generic.back", :default => 'Back'), orders_path %>

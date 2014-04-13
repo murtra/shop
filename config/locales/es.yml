@@ -119,6 +119,7 @@ es:
       too_long: es demasiado largo (%{count} caracteres máximo)
       too_short: es demasiado corto (%{count} caracteres mínimo)
       wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+      wrong_format: no tiene el formato correcto
     template:
       body: ! 'Se encontraron problemas con los siguientes campos:'
       header:
@@ -198,6 +199,78 @@ es:
     errors:
       <<: *errors
   # CUSTOM TRANSLATIONS
+  generic:
+    submit: Enviar
+    errors: Errores
+    show: Mostrar
+    editing: Editar
+    new: "Nuevo %{model}"
+    adding: Añadir
+    edit: Editar 
+    edit_model: "Editar %{model}"  
+    listing_model: "Listado de %{model}"  
+    add: Añadir
+    destroy: Eliminar
+    remove: Eliminar
+    required_fields: Campos obligatorios
+    successfully_updated: La datos se han modificado correctamente.
+    successfully_created: El registro se ha creado correctamente.
+    are_you_sure: Estás seguro
+    is_not_valid: no tiene un valor válido
+    connected: Conectado como
+    close: Cerrar
+    back: "Volver"
+    signup: "Regístrate"
+    login: "Iniciar sesión"
+    logout: "Cerrar sesión"
+    logged_out: Sesíón cerrada
+    logged_in: Sesión iniciada
+    invalid: no válido
+    invalid_credentials: Email o password no válidos
+    select: seleccionar
+  order_mailer:
+      order_created:
+        subject: "Tu pedido"
   home:
     welcome: Bienvenido a
     description: La tienda donde encontrarás más cosas que en Amazon!
+  activerecord:
+    models:
+      product:
+        one: Producto
+        other: Productos
+      order:
+        one: Pedido
+        other: Pedidos
+    attributes:
+      user:
+        name: Nombre
+        surname: Apellido
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+      order:
+        status: Estado
+        payment_mode: Forma de pago
+        address: Dirección
+        city: Ciudad
+        name: Nombre
+        last_name: Apellido
+      line_item:
+        quantity: Cantidad
+        product: Producto
+      product:
+        name: Nombre
+        description: Descripción
+        category: Categoría
+        stored_at: Feche de entrada
+        manufacturer: Fabricante
+        price: Precio
+  order:
+   allowed_payment_modes: 
+     - efectivo 
+     - tarjeta 
+     - paypal 
+   allowed_status:
+     - pendiente
+     - enviado
+     - recibido 

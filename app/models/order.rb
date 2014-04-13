@@ -1,14 +1,12 @@
 class Order < ActiveRecord::Base   
-  ALLOWED_PAYMENT_MODES = ["cash", "card", "paypal"]
-  ALLOWED_STATUS = ["pending", "send", "received"]    
+  #ALLOWED_PAYMENT_MODES = I18n.t('order.allowed_payment_modes') # "cash", "card", "paypal"
+  ALLOWED_STATUS = I18n.t('order.allowed_status') # ["pending", "send", "received"]    
   
   before_validation :set_status, only: [:create]   
   
   validates :name, :last_name, :address, :city, :payment_mode, :status, presence: true
-  validates :payment_mode, inclusion: { in: Order::ALLOWED_PAYMENT_MODES,
-      message: "is not valid" }
-  validates :status, inclusion: { in: Order::ALLOWED_STATUS,
-    message: "is not valid" } 
+  validates :payment_mode, inclusion: { in: I18n.t('order.allowed_payment_modes'), message: I18n.t('errors.messages.inclusion') }
+  #validates :status, inclusion: { in: Order::ALLOWED_STATUS, message: I18n.t('generic.invalid') } 
     
   #validates_associated :line_items
   
@@ -27,5 +25,9 @@ class Order < ActiveRecord::Base
     # Set status to "pending" on create
     def set_status   
       self.status = "pending"
-    end  
+    end 
+    
+    def allowed_payment_modes
+      I18n.t('order.allowed_payment_modes')
+    end 
 end

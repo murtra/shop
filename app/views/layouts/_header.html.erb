@@ -13,10 +13,10 @@
       <% if current_user %>
       <ul class="nav navbar-nav">
         <li>
-          <%= link_to "Products", products_path %>
+          <%= link_to Product.model_name.human(count: 2), products_path %>
         </li>
         <li>
-          <%= link_to "Orders", orders_path %>
+          <%= link_to Order.model_name.human(count: 2), orders_path %>
         </li>
       </ul>
       <% end %>
@@ -24,16 +24,16 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li>
-            <%= link_to "Connected as #{current_user.email}", "/" %>
+            <%= link_to "#{t('generic.connected', default: "Connected as")} #{current_user.email}", "/" %>
           </li>
           <li>
             <%= link_to session_path(current_user), :method => :delete do %>
-              <i class="glyphicon glyphicon-off"></i> Close
+              <i class="glyphicon glyphicon-off"></i> <%= t("generic.close") %>
             <% end %>
           </li>
         <% else%>
-          <li><%= link_to "Login", new_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to t("generic.login"), new_session_path %></li>
+          <li><%= link_to t("generic.signup"), new_user_path %></li>
         <% end %>
       </ul>
 

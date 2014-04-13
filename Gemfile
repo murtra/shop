@@ -43,6 +43,12 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 # Use LiveReload for development
 gem 'guard-livereload', group: :development
 
+# Gems for translations 
+group :development do
+  gem 'i15r', '~> 0.5.1'  
+  gem 'missing_t', '~> 0.3.1'  
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -1,0 +1,20 @@
+<%= I18n.t("generic.new", model: Order.model_name.human(count: 1)) %>
+
+
+<%= I18n.t("activerecord.attributes.order.payment_mode") %>: <%= @order.payment_mode %>
+<%= I18n.t("activerecord.attributes.order.name") %> : <%= @order.name %>
+<%= I18n.t("activerecord.attributes.order.last_name") %> : <%= @order.last_name %>
+<%= I18n.t("activerecord.attributes.order.address") %> : <%= @order.address %>
+<%= I18n.t("activerecord.attributes.order.city") %> : <%= @order.city %>
+
+
+    <% @order.line_items.each do |line_item| %>
+      
+      <%= line_item.product.name %>
+      <%= line_item.quantity %>
+      <%= number_to_currency line_item.price %>
+      
+    <% end %>
+    
+    
+    TOTAL <%= number_to_currency @order.total_price %>

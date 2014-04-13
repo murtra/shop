@@ -1,32 +1,30 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Status:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.status", :default => "Status:") %></strong>
   <%= @order.status %>
 </p>
 
 <p>
-  <strong>Payment mode:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.payment_mode", :default => "Payment mode:") %></strong>
   <%= @order.payment_mode %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.address", :default => "Address:") %></strong>
   <%= @order.address %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.city", :default => "City:") %></strong>
   <%= @order.city %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.name", :default => "Name:") %></strong>
   <%= @order.name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong><%= I18n.t("activerecord.attributes.order.last_name", :default => "Last name:") %></strong>
   <%= @order.last_name %>
 </p>   
 
@@ -34,5 +32,5 @@
   <%= render @order.line_items %>
 </ul>  
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to I18n.t("generic.edit", :default => 'Edit'), edit_order_path(@order) %> |
+<%= link_to I18n.t("generic.back", :default => 'Back'), orders_path %>

@@ -1,14 +1,14 @@
-<h1>Listing orders</h1>
+<h1><%= I18n.t("generic.listing_model", model: Order.model_name.human(count: 2)) %>   </h1>
 
 <table>
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Payment mode</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Name</th>
-      <th>Last name</th>
+      <th><%= I18n.t("activerecord.attributes.order.status", :default => "Status") %></th>
+      <th><%= I18n.t("activerecord.attributes.order.payment_mode", :default => "Payment mode") %></th>
+      <th><%= I18n.t("activerecord.attributes.order.address", :default => "Address") %></th>
+      <th><%= I18n.t("activerecord.attributes.order.city", :default => "City") %></th>
+      <th><%= I18n.t("activerecord.attributes.order.name", :default => "Name") %></th>
+      <th><%= I18n.t("activerecord.attributes.order.last_name", :default => "Last name") %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,9 +24,9 @@
         <td><%= order.city %></td>
         <td><%= order.name %></td>
         <td><%= order.last_name %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to I18n.t("generic.show", :default => 'Show'), order %></td>
+        <td><%= link_to I18n.t("generic.edit", :default => 'Edit'), edit_order_path(order) %></td>
+        <td><%= link_to I18n.t("generic.destroy", :default => 'Destroy'), order, method: :delete, data: { confirm: "#{t('generic.are_you_sure')}?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to I18n.t("generic.new", model: Order.model_name.human(count: 1), :default => 'New Order'), new_order_path %>

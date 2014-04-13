@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         OrderMailer.order_created(@order, current_user).deliver
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order, notice: t('generic.successfully_created') }
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, notice: t('generic.successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

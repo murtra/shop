@@ -1,6 +1,6 @@
 <%= render "search" %> 
 
-<h1>Listing products</h1>
+<h1><%= I18n.t("generic.listing_model", model: Product.model_name.human(count: 2)) %> </h1>
 
 <table>
   <thead>

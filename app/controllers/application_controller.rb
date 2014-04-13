@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private 
   
   def set_locale
-    if params[:locale] && I18n.available_locales.include?(params[:locale].to_sym)
+    if params[:locale] #&& I18n.available_locales.include?(params[:locale].to_sym)
       I18n.locale = params[:locale]
     else
       # there isn't params locale, we create one and redirect

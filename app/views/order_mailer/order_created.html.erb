@@ -1,21 +1,19 @@
-<h1>New Order</h1>
+<h1><%= I18n.t("generic.new", model: Order.model_name.human(count: 1)) %></h1>
 
 <ul>
-  <li>Date: <%= @order.created_at %></li>
-  <li>Status: <%= @order.status %></li>
-  <li>Payment mode: <%= @order.payment_mode %></li>
-  <li>Name: <%= @order.name %></li>
-  <li>Last name: <%= @order.last_name %></li>
-  <li>Address: <%= @order.address %></li>
-  <li>City: <%= @order.city %></li>
+  <li><%= I18n.t("activerecord.attributes.order.payment_mode") %>: <%= @order.payment_mode %></li>
+  <li><%= I18n.t("activerecord.attributes.order.name") %> : <%= @order.name %></li>
+  <li><%= I18n.t("activerecord.attributes.order.last_name") %> : <%= @order.last_name %></li>
+  <li><%= I18n.t("activerecord.attributes.order.address") %> : <%= @order.address %></li>
+  <li><%= I18n.t("activerecord.attributes.order.city") %> : <%= @order.city %></li>
 </ul>
 
-<table>
+<table style="border: 1px #ddd solid">
   <thead>
     <tr>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th><%= I18n.t("activerecord.attributes.product.name") %></th>
+      <th><%= I18n.t("activerecord.attributes.line_item.quantity") %></th>
+      <th><%= I18n.t("activerecord.attributes.product.price") %></th>
     <tr>
   </thead>
   <tbody>

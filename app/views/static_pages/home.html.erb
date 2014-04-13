@@ -5,7 +5,7 @@
     <%= t "home.description" %>
   </h2>
 
-  <%= link_to "Sign up now", new_user_path, class: "btn btn-success" if not current_user %>
+  <%= link_to t("generic.signup"), new_user_path, class: "btn btn-success" if not current_user %>
 </div>
 
 <%#= render "layouts/bootstrap_elements" %> 

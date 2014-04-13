@@ -66,6 +66,7 @@ GEM
       multi_json (~> 1.8)
     hike (1.2.3)
     http_parser.rb (0.5.3)
+    i15r (0.5.2)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -86,6 +87,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
+    missing_t (0.3.2)
     multi_json (1.8.4)
     nio4r (1.0.0)
     pg (0.17.1)
@@ -157,8 +159,10 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   guard-livereload
+  i15r (~> 0.5.1)
   jbuilder (~> 1.2)
   jquery-rails
+  missing_t (~> 0.3.1)
   pg
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)

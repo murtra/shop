@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   validates :email, email: true
 
   validates :password, presence: true, length: { minimum: 8 }, on: :create
-  validates :password, format: { with: PASSWORD_REGEX, message: "must contain at least one digit and one character" }, unless: "password.blank?"
+  validates :password, format: { with: PASSWORD_REGEX, message: I18n.t("errors.messages.wrong_format") }, unless: "password.blank?"
 
 end
