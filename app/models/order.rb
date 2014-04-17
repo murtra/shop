@@ -17,7 +17,7 @@ class Order < ActiveRecord::Base
     reject_if: proc { |attributes| attributes[:product_id].blank? || attributes[:quantity].blank? }  
   
   def total_price
-    line_items.sum {|l| l.price * l.quantity}
+    line_items.to_a.sum {|l| l.price * l.quantity}
   end
     
   private 

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Product do
   it 'decrements stock' do
-    product = Product.create!(name: "chair", stored_at: Time.current, price: 40, stock: 25)
+    product = create_product
     
     expect {
       product.decrement_stock(5)

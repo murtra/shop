@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Order do
   it 'calculates total price' do
-    carrot = Product.create!(name: "carrot", stored_at: Time.current, price: 40, stock: 25)
-    potato = Product.create!(name: "potato", stored_at: Time.current, price: 22, stock: 57)
+    carrot = create_product
+    potato = create_product(name: "potato", price: 22)
 
     order =  Order.create!(name: "Almudena", last_name: "Garcia", address: "Av. Lluis Pericot, 47", city: "Girona", payment_mode: "paypal")
 
