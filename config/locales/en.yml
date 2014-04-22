@@ -237,6 +237,7 @@ en:
     logout: Logout
     logged_out: Logged out
     logged_in: Logged in
+    signed_up: Signed up!
     invalid: invalid
     invalid_credentials: Invalid Email or password 
     select: select

@@ -225,6 +225,7 @@ es:
     logout: "Cerrar sesión"
     logged_out: Sesíón cerrada
     logged_in: Sesión iniciada
+    signed_up: Registrado!
     invalid: no válido
     invalid_credentials: Email o password no válidos
     select: seleccionar
