@@ -22,7 +22,15 @@
 
   <div class="field">
     <%= f.label :payment_mode %><br>
-    <%= f.text_field :payment_mode %>
+    <%= f.select :payment_mode, allowed_payment_modes_with_translations %> 
+  </div> 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
@@ -32,14 +40,7 @@
     <%= f.label :city %><br>
     <%= f.text_field :city %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>    
+  
   
   <div class="line-items">
     <h2><%= Product.model_name.human(count: 2) %></h2>
