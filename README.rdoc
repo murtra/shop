@@ -163,4 +163,23 @@ que se han comprado, cantidad, precio de los mismos, y el precio tot
 
 Por otro lado, la otra funcionalidad que nuestro cliente nos pide es un par de enlaces en el pie de 
 la página para cambiar de idioma entre español e inglés. Cuando se haga click en uno de esos 
-enlaces, todos los textos de la aplicación deben cambiar al idioma seleccionado.
+enlaces, todos los textos de la aplicación deben cambiar al idioma seleccionado.  
+
+== Semana 8: Testing   
+
+En esta octava semana de curso vamos a trabajar un poco con el testing. Un test es un programa que comprueba la validez de otro. En nuestro caso haremos tests que comprueben que nuestros modelos, controllers, helpers o vistas funcionan correctamente. Para ello vamos a utilizar una librería de test muy popular en el mundo ruby denominada Rspec.
+
+El primer paso será instalarnos Rspec:
+http://cursos.aspgems.com/topics/15­testing/contents/490
+
+En segundo lugar será necesario revisar todos los vídeos de Code School publicados en la unidad:
+http://cursos.aspgems.com/courses/1­ruby­on­rails/topics/15­testing/videos
+
+Y el tercer paso sería revisar las recomendaciones generales de BetterSpecs:
+http://cursos.aspgems.com/topics/15­testing/contents/482
+
+Como bola extra, podréis aprender ampliar conocimientos con el libro Everyday Rails Testing:
+http://cursos.aspgems.com/topics/15­testing/contents/489
+
+En todos los casos, espero vuestras valoraciones sobre la utilidad de cada uno de los contenidos.
+Para terminar, deberéis realizar al menos un par de test en vuestro aplicación, al menos uno de modelo y otro de controlador. Evidentemente cuántos más hagáis mejor porque más vais a aprender, pero no os voy a definir cuales ya que cada uno habéis hecho la aplicación de forma distinta.
